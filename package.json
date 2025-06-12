@@ -1,0 +1,57 @@
+{
+  "name": "hono-kit",
+  "version": "0.0.1",
+  "description": "A typescript library",
+  "type": "module",
+  "files": ["dist"],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "bunup",
+    "dev": "bunup --watch",
+    "check": "biome check .",
+    "check:types": "tsc --noEmit",
+    "test": "bun test",
+    "test:watch": "bun test --watch",
+    "test:coverage": "bun test --coverage",
+    "release": "bumpp --commit --push --tag",
+    "publish:ci": "bun publish --access public --no-git-checks",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
+    "@types/bun": "^1.2.16",
+    "bumpp": "^10.1.1",
+    "bunup": "^0.8.35",
+    "husky": "^9.1.7",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chenxin-yan/hono-kit.git"
+  },
+  "peerDependencies": {
+    "typescript": ">=4.5.0"
+  },
+  "peerDependenciesMeta": {
+    "typescript": {
+      "optional": true
+    }
+  },
+  "homepage": "https://github.com/chenxin-yan/hono-kit#readme",
+  "bugs": {
+    "url": "https://github.com/chenxin-yan/hono-kit/issues"
+  },
+  "license": "MIT"
+}
